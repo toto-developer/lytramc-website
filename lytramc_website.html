@@ -1,173 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LytraMc Network</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #007acc, #00cfff);
-      color: #f0f8ff;
-      padding: 20px;
-      text-align: center;
-      animation: fadeInBg 2s ease forwards;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LytraMc Network</title>
 
-    @keyframes fadeInBg {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
 
-    header {
-      background-color: rgba(0, 152, 204, 0.85);
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      font-family: 'Montserrat', sans-serif;
-      animation: fadeInText 2s ease forwards;
-    }
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    /* Fondo pixelado azul difuminado */
+    background-color: #003366;
+    background-image:
+      linear-gradient(45deg, #0057b8 25%, transparent 25%),
+      linear-gradient(-45deg, #0057b8 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #0073e6 75%),
+      linear-gradient(-45deg, transparent 75%, #0073e6 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    color: #e0f0ff;
+    padding: 20px;
+    text-align: center;
+  }
 
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 3rem;
-      letter-spacing: 0.1em;
-      text-shadow: 0 0 8px #00e0ff;
-      color: #ccf5ff;
-    }
+  header {
+    background: rgba(0, 115, 230, 0.85);
+    border-radius: 15px;
+    padding: 35px 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 30px rgba(0, 115, 230, 0.7);
+    font-family: 'Montserrat', sans-serif;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 3.2rem;
+    color: #a6d8ff;
+    text-shadow: 0 0 10px #88c9ff;
+    letter-spacing: 0.15em;
+  }
+  header p {
+    font-size: 1.3rem;
+    margin-top: 8px;
+    color: #c2dfff;
+  }
 
-    header p {
-      margin: 10px 0 0;
-      font-weight: 400;
-      font-size: 1.2rem;
-      color: #ccefff;
-    }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 50px;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #b0dbff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    background: rgba(0, 130, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 160, 255, 0.5);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  nav a:hover {
+    background: #009eff;
+    box-shadow: 0 0 30px #00c1ff;
+    transform: scale(1.15);
+    color: #fff;
+    text-shadow: 0 0 8px #00d1ff;
+  }
 
-    nav {
-      margin: 30px 0 40px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      animation: fadeInText 2.5s ease forwards;
-    }
+  section {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: rgba(0, 115, 230, 0.15);
+    padding: 30px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 130, 255, 0.3);
+    text-align: left;
+    color: #d3e8ff;
+    transition: background 0.3s ease;
+  }
+  section:hover {
+    background: rgba(0, 140, 255, 0.25);
+  }
+  section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    border-bottom: 3px solid #009eff;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    color: #a7d6ff;
+    text-shadow: 0 0 6px #00aaff;
+  }
 
-    nav a {
-      color: #ccf5ff;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-decoration: none;
-      padding: 8px 18px;
-      border-radius: 50px;
-      background: rgba(0, 179, 255, 0.25);
-      box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
+  .modalidad {
+    background: rgba(255, 255, 255, 0.12);
+    border-left: 8px solid #00aaff;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 170, 255, 0.45);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .modalidad:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateX(5px);
+  }
+  .modalidad h3 {
+    margin-top: 0;
+    font-size: 1.7rem;
+    color: #bde6ff;
+    text-shadow: 0 0 8px #00b5ff;
+  }
+  .modalidad p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
 
-    nav a:hover {
-      background: rgba(0, 255, 255, 0.85);
-      box-shadow: 0 0 25px #00eaff;
-      transform: scale(1.15);
-      text-shadow: 0 0 10px #00eaff;
-    }
+  ul {
+    padding-left: 1.2rem;
+    color: #b4dbff;
+    font-size: 1.1rem;
+  }
+  ul li {
+    margin-bottom: 8px;
+  }
+  ul li a {
+    color: #90caff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  ul li a:hover {
+    text-decoration: underline;
+    color: #00b0ff;
+  }
 
-    section {
-      max-width: 900px;
-      margin: 0 auto 40px;
-      background: rgba(0, 110, 165, 0.15);
-      padding: 30px 25px;
-      border-radius: 15px;
-      box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
-      text-align: left;
-      color: #d0e9ff;
-      animation: fadeInText 3s ease forwards;
-    }
+  .btn {
+    display: inline-block;
+    background: #00bfff;
+    color: #fff;
+    font-weight: 700;
+    padding: 14px 36px;
+    margin-top: 20px;
+    border-radius: 60px;
+    text-decoration: none;
+    box-shadow: 0 0 25px #00d4ff;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .btn:hover {
+    background: #008fcc;
+    box-shadow: 0 0 35px #00e0ff;
+    transform: scale(1.1);
+  }
 
-    section h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #00e0ff;
-      padding-bottom: 8px;
-      color: #b0e6ff;
-      text-shadow: 0 0 6px #00d4ff;
-    }
+  footer {
+    margin-top: 60px;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: #9fcfff;
+    text-shadow: 0 0 3px #004466;
+  }
+</style>
 
-    .modalidad {
-      background: rgba(255, 255, 255, 0.15);
-      border-left: 6px solid #00cfff;
-      padding: 15px 20px;
-      margin-bottom: 18px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 204, 255, 0.4);
-      transition: background 0.3s ease;
-    }
-
-    .modalidad:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-    .modalidad h3 {
-      margin-top: 0;
-      font-size: 1.5rem;
-      color: #d0f0ff;
-      text-shadow: 0 0 6px #00e0ff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px 10px;
-      color: #a0cde8;
-      font-size: 0.9rem;
-      text-shadow: 0 0 3px #004466;
-      animation: fadeInText 4s ease forwards;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #00cfff;
-      color: white;
-      font-weight: 600;
-      padding: 12px 28px;
-      margin-top: 15px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 0 20px #00dfff;
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      font-size: 1.1rem;
-    }
-
-    .btn:hover {
-      background: #009ecc;
-      box-shadow: 0 0 30px #00f0ff;
-      transform: scale(1.1);
-    }
-
-    ul li a {
-      color: #a0d8ff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    ul li a:hover {
-      text-decoration: underline;
-      color: #00e0ff;
-    }
-
-    /* Animación fade para textos */
-    @keyframes fadeInText {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -221,21 +225,21 @@
   <section id="tienda">
     <h2>Tienda</h2>
     <p>Apoya al servidor y obtén rangos, llaves y objetos exclusivos.</p>
-    <a class="btn" href="#">Ir a la tienda</a> <!-- Cambia el href -->
+    <a href="#" class="btn">Ir a la tienda</a>
   </section>
 
   <section id="comunidad">
     <h2>Comunidad</h2>
     <p>Únete a nuestro Discord, participa en eventos y recibe soporte.</p>
-    <a class="btn" href="https://discord.gg/lytramc">Entrar a Discord</a> <!-- Cambia si es necesario -->
+    <a href="https://discord.gg/lytramc" class="btn">Entrar a Discord</a>
   </section>
 
   <section id="votar">
     <h2>Vota y Gana Recompensas</h2>
     <ul>
-      <li><a href="#">Votar en MinecraftServers.org</a></li> <!-- Cambia href -->
-      <li><a href="#">Votar en TopG.org</a></li>             <!-- Cambia href -->
-      <li><a href="#">Votar en NameMC</a></li>               <!-- Cambia href -->
+      <li><a href="#">Votar en MinecraftServers.org</a></li>
+      <li><a href="#">Votar en TopG.org</a></li>
+      <li><a href="#">Votar en NameMC</a></li>
     </ul>
   </section>
 
