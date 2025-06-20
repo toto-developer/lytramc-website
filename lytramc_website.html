@@ -4,123 +4,168 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LytraMc Network</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
   <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      /* Fondo pixelado estilo Minecraft, repetible */
-      background-image: url('https://i.imgur.com/qZQwCgU.png');
-      background-repeat: repeat;
-      background-size: 64px 64px; /* tamaño típico textura Minecraft */
-      background-color: #001f3f; /* azul oscuro base */
-      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #007acc, #00cfff);
+      color: #f0f8ff;
       padding: 20px;
       text-align: center;
-      animation: fadeIn 2s ease-in;
+      animation: fadeInBg 2s ease forwards;
     }
 
-    @keyframes fadeIn {
+    @keyframes fadeInBg {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
     header {
-      background-color: rgba(0, 207, 255, 0.9);
-      padding: 20px;
-      text-align: center;
-      color: white;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      border-bottom: 4px solid #00cfff;
+      background-color: rgba(0, 152, 204, 0.85);
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      font-family: 'Montserrat', sans-serif;
+      animation: fadeInText 2s ease forwards;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 8px #00e0ff;
+      color: #ccf5ff;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #ccefff;
     }
 
     nav {
-      background-color: rgba(0, 95, 158, 0.85);
+      margin: 30px 0 40px;
       display: flex;
       justify-content: center;
-      padding: 10px;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      gap: 30px;
+      animation: fadeInText 2.5s ease forwards;
     }
 
     nav a {
-      color: white;
+      color: #ccf5ff;
+      font-weight: 600;
+      font-size: 1.1rem;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: transform 0.3s ease, color 0.3s ease;
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: rgba(0, 179, 255, 0.25);
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
-      transform: scale(1.1);
-      color: #aee9ff;
+      background: rgba(0, 255, 255, 0.85);
+      box-shadow: 0 0 25px #00eaff;
+      transform: scale(1.15);
+      text-shadow: 0 0 10px #00eaff;
     }
 
     section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 30px auto;
-      background: rgba(255, 255, 255, 0.88);
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-      animation: fadeIn 1.5s ease-in-out;
-      color: #1a1a1a;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      background: rgba(0, 110, 165, 0.15);
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
       text-align: left;
+      color: #d0e9ff;
+      animation: fadeInText 3s ease forwards;
     }
 
-    h2 {
-      color: #00cfff;
-      border-bottom: 2px solid #00cfff;
-      padding-bottom: 10px;
+    section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #00e0ff;
+      padding-bottom: 8px;
+      color: #b0e6ff;
+      text-shadow: 0 0 6px #00d4ff;
     }
 
     .modalidad {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.15);
       border-left: 6px solid #00cfff;
-      padding: 15px;
-      margin-bottom: 15px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-      border-radius: 8px;
+      padding: 15px 20px;
+      margin-bottom: 18px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 204, 255, 0.4);
+      transition: background 0.3s ease;
+    }
+
+    .modalidad:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .modalidad h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #d0f0ff;
+      text-shadow: 0 0 6px #00e0ff;
     }
 
     footer {
-      background: rgba(0, 95, 158, 0.85);
-      color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      backdrop-filter: blur(5px);
-      border-top: 4px solid #00cfff;
+      padding: 20px 10px;
+      color: #a0cde8;
+      font-size: 0.9rem;
+      text-shadow: 0 0 3px #004466;
+      animation: fadeInText 4s ease forwards;
     }
 
     .btn {
+      display: inline-block;
       background: #00cfff;
       color: white;
-      padding: 10px 20px;
+      font-weight: 600;
+      padding: 12px 28px;
+      margin-top: 15px;
+      border-radius: 50px;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px #00dfff;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1.1rem;
     }
 
     .btn:hover {
       background: #009ecc;
-      transform: scale(1.05);
+      box-shadow: 0 0 30px #00f0ff;
+      transform: scale(1.1);
     }
 
     ul li a {
-      color: #005f9e;
+      color: #a0d8ff;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     ul li a:hover {
       text-decoration: underline;
-      color: #00cfff;
+      color: #00e0ff;
+    }
+
+    /* Animación fade para textos */
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -176,7 +221,7 @@
   <section id="tienda">
     <h2>Tienda</h2>
     <p>Apoya al servidor y obtén rangos, llaves y objetos exclusivos.</p>
-    <a class="btn" href="#">Ir a la tienda</a> <!-- Reemplaza href="#" con tu enlace -->
+    <a class="btn" href="#">Ir a la tienda</a> <!-- Cambia el href -->
   </section>
 
   <section id="comunidad">
